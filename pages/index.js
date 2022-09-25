@@ -9,7 +9,7 @@ const Home = () => {
 
       <div className='products-heading'>
         <h2>Best Selling Products</h2>
-        <p>Women Jeans</p>
+        <p>Graphic T-shirts</p>
       </div>
 
       <div className='products-container'>
