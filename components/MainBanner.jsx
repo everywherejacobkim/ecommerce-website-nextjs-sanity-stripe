@@ -2,19 +2,19 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const MainBanner = () => {
+const MainBanner = ({ mainBanner }) => {
   return (
     <div className="main-banner-container">
       <div>
-        <p className="item">SMALL TEXT</p>
-        <h3>MID TEXT</h3>
+        <p className="item">{mainBanner.smallText}</p>
+        <h3>{mainBanner.midText}</h3>
         <Image src="" alt="new-item" className="main-banner-image" />
         <div>
           <Link href="/product/ID">
-            <button type="button">BUTTON TEXT</button>
+            <button type="button">{mainBanner.buttonText}</button>
           </Link>
           <div className="desc">
-            <h5>Description</h5>
+            <h5>{mainBanner.desc}</h5>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut
               velit ea delectus totam aperiam illum, adipisci, hic nulla quos
