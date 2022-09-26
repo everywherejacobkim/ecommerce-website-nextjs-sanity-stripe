@@ -1,19 +1,25 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { urlFor } from "../lib/client";
 
 const MainBanner = ({ mainBanner }) => {
   return (
     <div className="main-banner-container">
-      <div>
-        <p className="item">{mainBanner.smallText}</p>
+      <div className="main-banner-contents">
+        <h1>{mainBanner.largeText1}</h1>
         <h3>{mainBanner.midText}</h3>
-        <Image src="" alt="new-item" className="main-banner-image" />
+        <p className="item">{mainBanner.smallText}</p>
+        <img
+          src={urlFor(mainBanner.image)}
+          alt="new-item"
+          className="main-banner-image"
+        />
         <div>
           <Link href="/product/ID">
             <button type="button">{mainBanner.buttonText}</button>
           </Link>
-          <div className="desc">
+          <div className="main-banner-desc">
             <h5>{mainBanner.desc}</h5>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut
