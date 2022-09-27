@@ -16,7 +16,7 @@ const MainBanner = ({ mainBanner }) => {
           className="main-banner-image"
         />
         <div>
-          <Link href="/product/ID">
+          <Link href={`/product/${mainBanner.product}`}>
             <button type="button">{mainBanner.buttonText}</button>
           </Link>
           <div className="main-banner-desc">

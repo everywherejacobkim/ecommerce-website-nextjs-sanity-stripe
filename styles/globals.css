@@ -118,7 +118,7 @@ span.text-red {
 }
 
 .product-card:hover {
-  transform: scale(1.1,1.1)
+  transform: scale(1.1, 1.1)
 }
 
 .product-image {
@@ -266,7 +266,7 @@ span.text-red {
 
 .banner-desc .left h3 {
   font-weight: 900;
-  font-size: 80px;
+  font-size: 70px;
   margin-left: 25px;
 }
 
@@ -665,16 +665,29 @@ margin-top: 160px;
   margin-top: 10px;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
   .main-banner-container{
     height: 560px;
   }
   .main-banner-image{
     width: 77%;
     height: 62%;
-    top: -2%;
-    right: -6%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); 
   }
+
+  .main-banner-desc h5 {
+    background-color: #dfdddda6;
+    padding: 10px;
+    width: 90%;
+    color: #324d67;
+  }
+
+  .main-banner-desc p {
+    color: #dcdcdc;
+  }
+
   .footer-banner-container{
     height: 560px;
     margin-top: 80px;
@@ -686,7 +699,7 @@ margin-top: 160px;
     height: 56%
   }
   .banner-desc .left h3{
-    font-weight: 900;
+    font-weight: 700;
     font-size: 50px;
     margin-left: 5px;
   }
@@ -715,9 +728,10 @@ margin-top: 160px;
   .main-banner-container h3{
     font-size: 40px;
   }
-  .main-banner-container button{
-    margin-top: 90px;
-    z-index: 10000;
+  .main-banner-container button {
+    position: absolute;
+    top: 22%;
+    left: 52%; 
   }
   .desc{
     bottom: 60px;
