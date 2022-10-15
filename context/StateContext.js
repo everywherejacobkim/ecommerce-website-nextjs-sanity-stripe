@@ -10,17 +10,35 @@ export const StateContext = ({children}) => {
     const [totalQty, setTotalQty] = useState();
     const [qty, setQty] = useState(1);
 
+    const increaseQty = () => {
+        setQty((prevQty) => (
+            prevQty + 1
+        ));
+    }
+
+    const decreaseQty = () => {
+        setQty((prevQty) => {
+            if (prevQty - 1 < 1) {
+                return 1;
+            }
+            return prevQty - 1
+        })
+    }
+
     return (
         <Context.Provider value={{
             showCart,
             cartItems,
             totalPrice,
             totalQty,
-            qty
+            qty,
+            increaseQty,
+            decreaseQty,
         }}>
             {children}
         </Context.Provider>
     )
 }
 
-export default StateContext;
+export const useStateContext = () => useContext(Context);
+

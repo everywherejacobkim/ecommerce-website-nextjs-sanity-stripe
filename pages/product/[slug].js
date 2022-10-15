@@ -7,12 +7,14 @@ import {
   AiOutlineStar
 } from "react-icons/ai";
 import { Product } from '../../components';
+import { useStateContext } from '../../context/StateContext';
 
 const ProductDetails = ({ product, products}) => {
   
   const { image, name, details, price } = product; 
   
   const [index, setIndex] = useState(0)
+  const { increaseQty, decreaseQty, qty } = useStateContext();
 
   return (
     <div>
@@ -46,20 +48,20 @@ const ProductDetails = ({ product, products}) => {
           <h4>Details:</h4>
           <p>{details}</p>
           <p className='price'>${price}</p>
-          <p className='quantity'>
+          <div className='quantity'>
             <h3>Quantity:</h3>
             <p className='quantity-desc'>
-              <span className='minus' onClick="">
+              <span className='minus' onClick={decreaseQty}>
                 <AiOutlineMinus />
               </span>
               <span className='num' onClick="">
-                0
+                {qty}
               </span>
-              <span className='plus' onClick="">
+              <span className='plus' onClick={increaseQty}>
                 <AiOutlinePlus />
               </span>
             </p>
-          </p>
+          </div>
           <div className='buttons'>
             <button type='button' className='add-to-cart' onClick="">
               Add to Cart
@@ -112,9 +114,6 @@ export const getStaticPaths = async () => {
       slug: product.slug.current
     }
   }));
-
-  console.log(products);
-  console.log(paths);
 
   return {
     paths, 
