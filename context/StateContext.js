@@ -5,10 +5,38 @@ const Context = createContext();
 
 export const StateContext = ({children}) => {
     const [showCart, setShowCart] = useState(false);
-    const [cartItems, setCartItems] = useState();
+    const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState();
-    const [totalQty, setTotalQty] = useState();
+    const [totalQty, setTotalQty] = useState(0);
     const [qty, setQty] = useState(1);
+
+    const onAdd = (product, quantity) => {
+        const checkProductInCart = cartItems.find((item) => item._id === product._id);
+
+        // When specific item already exists in the cart
+        if (checkProductInCart) {
+            setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * quantity);
+            setTotalQty((prevTotalQuantity) => prevTotalQuantity + quantity);
+        
+            const updatedCartItems = cartItems.map((cartProduct) => {
+                if (cartProduct._id === product._id) {
+                    return {
+                        ...cartProduct,
+                        quantity: cartProduct.quantity + quantity
+                    }
+                }
+            })
+            setCartItems(updatedCartItems);
+        } // when add new item to the cart
+        else {
+            setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * quantity);
+            setTotalQty((prevTotalQuantity) => prevTotalQuantity + quantity);
+
+            product.quantity = quantity;
+            setCartItems([...cartItems, {...product}]);
+        }
+        toast.success(`${qty} ${product.name} added to the cart!`);
+    }
 
     const increaseQty = () => {
         setQty((prevQty) => (
@@ -28,12 +56,14 @@ export const StateContext = ({children}) => {
     return (
         <Context.Provider value={{
             showCart,
+            setShowCart,
             cartItems,
             totalPrice,
             totalQty,
             qty,
             increaseQty,
             decreaseQty,
+            onAdd,
         }}>
             {children}
         </Context.Provider>

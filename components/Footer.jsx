@@ -12,10 +12,10 @@ const Footer = () => {
         <AiOutlineCopyrightCircle />
         <p className="copyright-text">2022 JFT All rights reserved</p>
       </div>
-      <p className="icons">
+      <div className="icons">
         <AiFillInstagram />
         <AiOutlineTwitter />
-      </p>
+      </div>
     </div>
   );
 };
