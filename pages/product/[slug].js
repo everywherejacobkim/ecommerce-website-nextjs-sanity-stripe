@@ -40,7 +40,7 @@ const ProductDetails = ({ product, products}) => {
               <AiOutlineStar />
             </div>
             <p>
-              (20)
+              (5)
             </p>
           </div>
           <h4>Details:</h4>
@@ -86,6 +86,20 @@ const ProductDetails = ({ product, products}) => {
   )
 }
 
+export const getStaticProps = async ({ params: { slug }}) => {
+  const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
+  const productsQuery = '*[_type == "product"]';
+
+  const product = await client.fetch(query);
+  const products = await client.fetch(productsQuery);
+
+  return {
+    props: {
+      product, products
+    }
+  }
+}
+
 export const getStaticPaths = async () => {
   const query = `*[_type == "product"] {
     slug {
@@ -99,23 +113,12 @@ export const getStaticPaths = async () => {
     }
   }));
 
+  console.log(products);
+  console.log(paths);
+
   return {
     paths, 
     fallback: 'blocking'
-  }
-}
-
-export const getStaticProps = async ({ params: { slug }}) => {
-  const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
-  const productsQuery = '*[_type == "product"]';
-
-  const product = await client.fetch(query);
-  const products = await client.fetch(productsQuery);
-
-  return {
-    props: {
-      product, products
-    }
   }
 }
 
