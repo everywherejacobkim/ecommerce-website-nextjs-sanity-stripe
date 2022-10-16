@@ -400,10 +400,11 @@ span.text-red {
 }
 
 .product .cart-product-image {
-  width:180px ;
+  width: 150px;
   height: 150px;
   border-radius: 15px;
   background-color: #ebebeb;
+  margin-top: -2%;
 }
 
 .item-desc .flex {
@@ -586,7 +587,8 @@ span.text-red {
 }
 .quantity-desc{
   border: 1px solid gray;
-  padding: 6px;
+  padding: 5px;
+  margin-left: 5px;
 }
 .quantity-desc span{
   font-size: 16px;
@@ -771,8 +773,9 @@ margin-top: 160px;
 
   }
   .product .cart-product-image{
-    width: 25%;
-    height: 25%;
+    width: 30%;
+    height: 100px;
+    margin-top: -2%;
   }
   .buttons .add-to-cart{
     width: 150px;
