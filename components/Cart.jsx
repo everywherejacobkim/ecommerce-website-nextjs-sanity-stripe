@@ -21,6 +21,8 @@ const Cart = () => {
     increaseQty,
     decreaseQty,
     qty,
+    toggleCartItemQty,
+    onRemove,
   } = useStateContext();
 
   return (
@@ -68,16 +70,30 @@ const Cart = () => {
                   <div className="flex bottom">
                     <div>
                       <div className="quantity-desc">
-                        <span className="minus" onClick="">
+                        <span
+                          className="minus"
+                          onClick={() => {
+                            toggleCartItemQty(item._id, "dec");
+                          }}
+                        >
                           <AiOutlineMinus />
                         </span>
-                        <span className="num">1</span>
-                        <span className="plus" onClick="">
+                        <span className="num">{item.quantity}</span>
+                        <span
+                          className="plus"
+                          onClick={() => {
+                            toggleCartItemQty(item._id, "inc");
+                          }}
+                        >
                           <AiOutlinePlus />
                         </span>
                       </div>
                     </div>
-                    <button type="button" className="remove-item" onClick="">
+                    <button
+                      type="button"
+                      className="remove-item"
+                      onClick={() => onRemove(item)}
+                    >
                       <TiDeleteOutline />
                     </button>
                   </div>
