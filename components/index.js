@@ -1,7 +1,7 @@
-export { default as Layout } from './Layout';
-export { default as Cart } from './Cart';
-export { default as Footer } from './Footer';
-export { default as FooterBanner } from './FooterBanner';
-export { default as MainBanner } from './MainBanner';
-export { default as Product } from './Product';
-export { default as NavBar } from './NavBar';
+export { default as Layout } from "./layout/Layout";
+export { default as Cart } from "./cart/Cart";
+export { default as Footer } from "./footer/Footer";
+export { default as FooterBanner } from "./banner/FooterBanner";
+export { default as MainBanner } from "./banner/MainBanner";
+export { default as Product } from "./product/Product";
+export { default as NavBar } from "./navBar/NavBar";

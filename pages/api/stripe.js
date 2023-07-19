@@ -1,7 +1,12 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+import Stripe from 'stripe';
+
+const stripe = new Stripe('sk_test_51LuP7uBznyMh4gZDG7KsyAWxmkteT2gpmstc9yR860yABqcwkVCRoThAKHnTYWFdjGgijI2yFHVopSwUuE5zDErF00ZyFm7dCq');
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
+
+        console.log(req.body.cartItems)
+
         try {
             const params = {
                 submit_type: 'pay',

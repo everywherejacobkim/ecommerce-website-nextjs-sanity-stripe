@@ -1,13 +1,12 @@
 import React from "react";
 import Head from "next/head";
-import NavBar from "./NavBar";
-import Footer from "./Footer";
+import NavBar from "../navBar/NavBar";
+import Footer from "../footer/Footer";
 
 const Layout = ({ children }) => {
   return (
     <div className="layout">
       <Head>T-shirts Kingdom Store</Head>
-
       <header>
         <NavBar />
       </header>
