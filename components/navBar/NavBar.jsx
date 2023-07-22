@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
 import Cart from "../cart/Cart";
@@ -9,7 +10,14 @@ const NavBar = () => {
   return (
     <div className="navbar-container">
       <div className="logo">
-        <Link href="/"> Jacob's Favorite T-shirts </Link>
+        <Link href="/">
+          <Image
+            src="/assets/images/logo1.jpg"
+            alt="logo"
+            width={100}
+            height={100}
+          />
+        </Link>
       </div>
       <button
         type="button"
