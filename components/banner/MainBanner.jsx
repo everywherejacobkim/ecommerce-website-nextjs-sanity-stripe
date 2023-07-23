@@ -7,9 +7,11 @@ const MainBanner = ({ mainBanner }) => {
   return (
     <div className="main-banner-container">
       <div className="main-banner-contents">
-        <h1>{mainBanner.largeText1}</h1>
-        <h3>{mainBanner.midText}</h3>
-        <p className="item">{mainBanner.smallText}</p>
+        <div className="main-banner-texts">
+          <h1>{mainBanner.largeText1}</h1>
+          <h3>{mainBanner.midText}</h3>
+          <p className="item">{mainBanner.smallText}</p>
+        </div>
         <img
           src={urlFor(mainBanner.image)}
           alt="new-item"
