@@ -173,7 +173,7 @@ span.text-red {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(12%);
+  transform: translateX(-50%) translateY(10%);
   width: 520px;
   height: 480px;
 }
@@ -226,7 +226,7 @@ span.text-red {
 
 .footer-banner-container {
   padding: 80px 40px;
-  background-color: #f02d34;
+  background-color: #0d47a1;
   border-radius: 15px;
   position: relative;
   height: 400px;
@@ -245,11 +245,11 @@ span.text-red {
   border-radius: 15px;
   padding: 10px 16px;
   background-color: white;
-  color: red;
+  color: #0d47a1;
+  font-weight: 800;
   border: none;
   margin-top: 28px;
   font-size: 18px;
-  font-weight: 500;
   cursor: pointer;
 }
 
@@ -267,8 +267,8 @@ span.text-red {
 
 .footer-banner-image {
   position: absolute;
-  top: -25%;
-  left: 37%;
+  top: -20%;
+  left: 36%;
 }
 
 .banner-desc .right {
