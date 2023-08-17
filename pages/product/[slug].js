@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { client, urlFor } from "../../lib/client";
 import {
@@ -22,12 +23,14 @@ const ProductDetails = ({ product, products }) => {
           <img
             src={urlFor(image && image[index])}
             className="product-detail-image"
+            alt="product-image"
           />
           <div className="small-images-container">
             {image?.map((item, i) => (
               <img
                 key={item._key}
                 src={urlFor(item)}
+                alt="product-image-sm"
                 className={
                   i === index ? "small-image selected-image" : "small-image"
                 }
@@ -77,16 +80,13 @@ const ProductDetails = ({ product, products }) => {
           </div>
         </div>
       </div>
-
-      <div className="maylike-products-wrapper">
-        <h2>You may also like</h2>
-        <div className="marquee">
-          <div className="maylike-products-container">
-            {products.map((item) => (
-              <Product key={item._id} product={item} />
-            ))}
-          </div>
-        </div>
+      <div className="maylike-products-container">
+        {products
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 3)
+          .map((item) => (
+            <Product key={item._id} product={item} />
+          ))}
       </div>
     </div>
   );

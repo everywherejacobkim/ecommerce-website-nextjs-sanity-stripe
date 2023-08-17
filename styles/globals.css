@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inspiration&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
 
 html,
 body,
@@ -49,6 +50,7 @@ a {
   display: flex;
   align-items: center;
   width: 100%;
+  cursor: pointer;
 }
 
 .marquee-text {
@@ -127,6 +129,8 @@ span.text-red {
   gap: 15px;
   margin-top: 20px;
   width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .product-card {
@@ -187,21 +191,27 @@ span.text-red {
   z-index: 1;
 }
 
-.main-banner-container h3 {
-  font-size: 4rem;
-  margin-top: 1.5%;
-  margin-left: 1%;
-}
-
 .main-banner-container h1 {
   color: white;
-  font-size: 6em;
+  font-family: "Lalezar", cursive;
+  font-size: 7.5em;
   text-transform: uppercase;
-  margin-top: -4.5%;
+  margin-top: -3%;
+}
+
+.main-banner-container h3 {
+  font-size: 4.5em;
+  margin-top: 0.3%;
+  margin-left: 1.5%;
+  font-family: Impact, sans-serif;
 }
 
 .main-banner-texts {
   transform: translateX(-1%);
+}
+
+.main-banner-texts p {
+  transform: translateX(1%);
 }
 
 .main-banner-image {
@@ -256,7 +266,7 @@ span.text-red {
 
 .products-heading p {
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .footer-banner-container {
@@ -291,7 +301,7 @@ span.text-red {
 .banner-desc .left h3 {
   font-weight: 900;
   font-size: 70px;
-  margin-left: 25px;
+  margin-left: 15px;
 }
 
 .banner-desc .left p {
