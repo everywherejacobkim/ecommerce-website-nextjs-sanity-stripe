@@ -80,6 +80,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
         </div>
       </div>
+      <h1 className="maylike-title">Recommended for You</h1>
       <div className="maylike-products-container">
         {products
           .sort(() => Math.random() - 0.5)

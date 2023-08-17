@@ -357,8 +357,7 @@ span.text-red {
 .footer-container {
   color: #324d67;
   text-align: center;
-  margin-top: 20px;
-  padding: 30px 10px;
+  margin-top: 6em;
   font-weight: 700;
   display: flex;
   flex-direction: column;
@@ -659,6 +658,14 @@ span.text-red {
   justify-content: center;
   gap: 15px;
   margin-top: 20px;
+}
+.maylike-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+  color: #071625;
+  text-align: center;
 }
 .max-qty {
   font-weight: 500;
