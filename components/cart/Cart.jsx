@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useRef } from "react";
 import Link from "next/link";
 import {
@@ -19,9 +20,6 @@ const Cart = () => {
     totalQty,
     setShowCart,
     cartItems,
-    increaseQty,
-    decreaseQty,
-    qty,
     toggleCartItemQty,
     onRemove,
   } = useStateContext();
@@ -82,6 +80,7 @@ const Cart = () => {
                 <img
                   src={urlFor(item?.image[0])}
                   className="cart-product-image"
+                  alt="cart-product"
                 />
                 <div className="item-desc">
                   <div className="flex top">
